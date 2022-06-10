@@ -1,5 +1,5 @@
 import numpy as np
-from utils import norm_output
+from utils import plot_output
 
 # Define FZP parameters
 N = 1000  # matrix size
@@ -26,5 +26,5 @@ for n in range(0, M, 2):
                 print(p, q)
     print(n)
 
-norm_output(A, N)
+plot_output(A, N)
 

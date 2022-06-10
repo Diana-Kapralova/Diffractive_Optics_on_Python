@@ -1,6 +1,6 @@
 # Defining Grating Parameters
 import numpy as np
-from utils import norm_output
+from utils import plot_output
 
 N = 500
 A = np.ones((N, N))
@@ -18,4 +18,4 @@ r = np.sqrt((X - N/2*delim)*(X-N/2*delim) + (Y - N/2*delim)*(Y-N/2*delim))
 A[np.remainder(r, P) < P/2] = np.exp(1j * np.pi)
 A[r > (N/2 - 2)] = 0
 
-norm_output(A, N)
+plot_output(A, N)

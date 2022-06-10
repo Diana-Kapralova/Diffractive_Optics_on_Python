@@ -1,5 +1,5 @@
 import numpy as np
-from utils import norm_output
+from utils import plot_output
 
 # Define grating parameters
 N = 500  # matrix size
@@ -13,4 +13,4 @@ for q in range(N):
 
 A = np.tile(A, (N, 1))
 
-norm_output(A, N, angle=True)
+plot_output(A, N, angle=True)

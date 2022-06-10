@@ -1,5 +1,5 @@
 import numpy as np
-from utils import norm_output
+from utils import plot_output
 N = 500 # matrix size
 M = 50 # Number of gratings lines
 A = np.ones((N, N))
@@ -15,4 +15,4 @@ for n in range(0, M, 2):
         if (np.all(abs(q - N/2) > x[n])) and (np.all(abs(q-N/2) < x[n+1])):
             A[:, q] = np.exp(1j*np.pi)
 
-norm_output(A, N)
+plot_output(A, N)

@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def norm_output(x, N, angle=False):
+def plot_output(x, N, angle=False):
     """
     Evaluating field stregth E and it intensity IN.
     Plot diffractive element and it distribution of
