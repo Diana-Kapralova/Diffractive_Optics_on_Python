@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 from utils import norm_output
 N = 500 # matrix size
 M = 50 # Number of gratings lines
