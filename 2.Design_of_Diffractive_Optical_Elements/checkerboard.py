@@ -1,6 +1,7 @@
 import numpy as np
 from ttictoc import tic, toc
-import matplotlib.pyplot as plt
+from utils import plot_output
+
 # Defining Grating Parameters
 N = 500
 A1 = np.zeros((N, N))
@@ -24,14 +25,4 @@ for p in range(N-1, 1, -1):
 A = np.exp(1j*np.pi*np.logical_xor(A1, A2))
 toc()
 
-# Far field
-E = np.fft.fftshift(np.fft.fft2(A))
-
-# Intensity
-IN = (np.abs(E)/(N*N))*(np.abs(E)/(N*N))
-
-fig1 = plt.figure(figsize=(6, 6))
-plt.imshow(np.angle(A), cmap='gray')
-fig2 = plt.figure(figsize=(6, 6))
-plt.imshow(IN, cmap='gray')
-plt.show()
+plot_output(A, N, angle=True)
