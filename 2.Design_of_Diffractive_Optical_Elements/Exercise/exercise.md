@@ -7,4 +7,4 @@ order. Verify the result by estimating the efficiency values
 ## Exersice 2 
 
 Design a 2D grating to generate 3 x 3 diffraction spots of equal
-intensity. Verify the result with MATLAB.
+intensity. Verify the result by estimating the efficiency values.
