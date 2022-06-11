@@ -1,38 +1,26 @@
 import numpy as np
 from utils import plot_output
 
-# # Defining Grating Parameters
+# Defining Grating Parameters
 N = 500
-# A1 = np.zeros((N, N))
-# A2 = np.zeros((N, N))
-# A = np.zeros((N, N))
-# # Define the periods of the gratings
-# Px = 100
-# Py = 100
-# # Define fill factors
-FFx = 0.5
-# FFy = 0.5
-# # Constracting the grating
-# for p in range(N-1, 1, -1):
-#     for q in range(1, N):
-#         if np.remainder(q, Px) < Px*FFx:
-#             A1[p, q] = 1
-#         if np.remainder(p, Py) < Py*FFy:
-#             A2[p, q] = 1
-#
-# A = np.exp(1j*np.pi*np.logical_xor(A1, A2))
+# Define the periods of the gratings
+P = 150
+# Define fill factors
+FF = 0.9
 
-arr = np.array((N, N))
-# def triangle(n):
-n = 12
-arr1 = np.zeros((n, n))
-for i in range(0, n):
-    for j in range(0, n):
-        if (i + j) >= n-1:
-            arr1[i][j] = 1
-        # arr1[n-i-1][n-j-1] = 0
-        # arr1[i][j] = 1
-print(arr1)
-        # print('0' * (n - i) + '1' * i)
+# Nt patterns of triangle with fill space(define by FF) and 0 pixels
+Nt = P
+At = np.ones((Nt, Nt))
+for q in range(0, int(Nt)):
+    for p in range(0, Nt):
+        # Necessary condition for triangle
+        if (p + q) >= Nt*FF - 1:
+            At[p][q] = 0
 
-# triangle(6)
+# Rotate At for original triangle(not necessary)
+At = np.rot90(At)
+
+# Copy patterns N/Nt times
+A = np.tile(At, (int(N / Nt), int(N / Nt)))
+
+plot_output(A, N)
