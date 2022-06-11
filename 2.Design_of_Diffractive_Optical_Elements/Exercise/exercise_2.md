@@ -18,3 +18,8 @@ the x and y directions and calculate its far-field diffraction pattern
 
 Design a 2D phase FZP with a focal length of 3000 &mu;m along the
 x direction and 6000 &mu;m along the y direction.
+
+## Exercise 2.5
+
+Design an elliptical FZP with a 1.5 ratio of maximum to minimum focal
+length values
