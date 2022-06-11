@@ -23,8 +23,6 @@ for n in range(0, M, 2):
             if (np.all(r[p, q] > r1[n])) and (np.all(r[p, q] < r1[n+1])):
                 # change amplitude by phase(phase FZP)
                 A[p, q] = np.exp(1j*np.pi)
-                print(p, q)
-    print(n)
 
 plot_output(A, N)
 
