@@ -23,3 +23,8 @@ x direction and 6000 &mu;m along the y direction.
 
 Design an elliptical FZP with a 1.5 ratio of maximum to minimum focal
 length values
+
+## Exercise 2.6
+
+Design an amplitude axicon array in which the diameter of each element
+is 100 &mu;m and the period is 10 &mu;m
