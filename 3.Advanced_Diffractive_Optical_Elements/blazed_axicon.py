@@ -19,5 +19,5 @@ r = np.sqrt((X - N/2) * (X - N/2) + (Y - N/2) * (Y - N/2))
 # where P show period of this blades
 A = np.exp(1j * (np.remainder(r, 20)) * (2 * np.pi)/P)
 A[r > N/2] = 0
-rem = np.remainder(r, 20)
+
 plot_output(A, N, angle=True, profile=True)

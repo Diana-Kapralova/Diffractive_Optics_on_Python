@@ -7,6 +7,11 @@ _In addition, making some exercises from book_
 
 ## Assumption
 1. The amplitude and phase values are assigned assuming the size of each pixel to be 1 &mu;m.
+
 ## Abbreviation:
 
 **FZP** - Fresnel Zone Plate
+
+## CAUTION!
+1. Equivalent of function rem() in MATLAB is np.fmod(). NOT np.remainder() - different behavior with negative numbers. For positive everything OK.
+
