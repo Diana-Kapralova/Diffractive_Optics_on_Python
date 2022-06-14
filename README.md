@@ -11,7 +11,8 @@ _In addition, making some exercises from book_
 ## Abbreviation:
 
 **FZP** - Fresnel Zone Plate
+**SPP** - Spiral Phase Plate
 
 ## CAUTION!
 1. Equivalent of function rem() in MATLAB is np.fmod(). NOT np.remainder() - different behavior with negative numbers. For positive everything OK.
-
+2. Initialize amplitude array as array of complex number. If not plotting don't see phase changes in complex form. 
