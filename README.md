@@ -10,8 +10,10 @@ _In addition, making some exercises from book_
 
 ## Abbreviation:
 
+**DOE** - Diffractive Optical Element
 **FZP** - Fresnel Zone Plate
 **SPP** - Spiral Phase Plate
+**IFTA** - Iterative Fourier Transform Algorithm
 
 ## CAUTION!
 1. Equivalent of function rem() in MATLAB is np.fmod(). NOT np.remainder() - different behavior with negative numbers. For positive everything OK.

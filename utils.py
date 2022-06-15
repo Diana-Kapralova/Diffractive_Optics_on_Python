@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 def plot_output(x, N, angle=False, profile=False, spiral=False):
     """
-    Evaluating field stregth E and it intensity IN.
+    Evaluating field strength E and it intensity IN.
     Plot diffractive element and it distribution of
     diffractive field
 
@@ -12,9 +12,9 @@ def plot_output(x, N, angle=False, profile=False, spiral=False):
     :param N: resolution of matrix
     :param angle: show phase component
     :param profile: show phase profile
-    :param spiral: calculate field that not depend of N for SPP
+    :param spiral: calculate field that not depend on N for SPP
     :return: plots of diffraction element,
-    distribution of diffractive field, phase profile
+    distribution of diffraction field, phase profile
     """
     E = np.fft.fftshift(np.fft.fft2(x))
     if spiral:
