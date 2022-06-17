@@ -7,9 +7,9 @@ _In addition, making some exercises from book_
 
 ## Assumption
 1. The amplitude and phase values are assigned assuming the size of each pixel to be 1 &mu;m.
+2. Mesh - a number of zones of equal power
 
 ## Abbreviation:
-
 **DOE** - Diffractive Optical Element
 **FZP** - Fresnel Zone Plate
 **SPP** - Spiral Phase Plate
