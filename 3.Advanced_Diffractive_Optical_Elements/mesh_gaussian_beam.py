@@ -81,4 +81,4 @@ val_dict = {'I': I, 'J': J, 'R': R, 'sigma': sigma,
             'xh': xh, 'yh': yh}
 
 scipy.io.savemat('GaussianMesh.mat', val_dict)
-dic = scipy.io.loadmat('GaussianMesh.mat', val_dict)
+dic = scipy.io.loadmat('GaussianMesh.mat')
