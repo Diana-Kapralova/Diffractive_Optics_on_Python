@@ -105,7 +105,7 @@ psi1 = psi[:, 0]
 j = xh[:, 1]
 # for i in range(1, n):
 xh1 = np.reshape(xh, (xh.shape[0]*xh.shape[1], 1), order='F')
-yh1 = np.reshape(yh, (yh1.shape[0]*yh.shape[1], 1), order='F')
+yh1 = np.reshape(yh, (yh.shape[0]*yh.shape[1], 1), order='F')
 psi1 = np.reshape(psi, (psi.shape[0]*psi.shape[1], 1), order='F')
 
 # saves data in files that can be retrieved by software that will
@@ -117,7 +117,7 @@ f = open('testdata.pkl', 'wb')
 pickle.dump(value_dict, f)
 f.close()
 # -----------------
-index = np.arange(-R, R, step)  # regular spaced points
+index = np.arange(-R, R+step, step)  # regular spaced points
 index = index[0:-1]  # even number of points
 XH1, YH1 = np.meshgrid(index, index)  # creates grid of points with limits given by index
 # store regularly spaced points and phase for later use
