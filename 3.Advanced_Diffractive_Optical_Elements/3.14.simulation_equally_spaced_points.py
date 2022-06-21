@@ -16,18 +16,25 @@ xh1 = phase_circle_dict['xh1']
 yh1 = phase_circle_dict['yh1']
 psi1 = phase_circle_dict['psi1']
 
-# p00 + p10*x + p01*y + p20*x^2 + p11*x*y + p02*y^2 + p30*x^3 + p21*x^2*y
-#                     + p12*x*y^2 + p03*y^3 + p40*x^4 + p31*x^3*y + p22*x^2*y^2
-#                     + p13*x*y^3 + p04*y^4 + p50*x^5 + p41*x^4*y + p32*x^3*y^2
-#                     + p23*x^2*y^3 + p14*x*y^4 + p05*y^5
-xh1 = xh1.flatten()
-yh1 = yh1.flatten()
+
 def polynom3d(x, y, z, degree):
-    arg_x = np.vander(x, degree)
-    arg_y = np.vander(y, degree)
-    all_args = np.hstack((arg_x, arg_y))
-    (coefficients, residuals, rank, sing_vals) = np.linalg.lstsq(all_args, z)
+    if len(x.shape) == 1:
+        x = x.reshape((x.shape[0], 1))
+    if len(y.shape) == 1:
+        y = y.reshape((y.shape[0], 1))
+    for i in range(degree + 1):
+        for j in range(degree + 1):
+            if (i + j) <= degree:
+                if i == 0 and j == 0:
+                    start_multi = (x**i) * (y**j)
+                    # print(start_multi)
+                else:
+                    multi = (x ** i) * (y ** j)
+                    arg_arr = np.hstack((start_multi, multi))
+                    start_multi = arg_arr
+
+    (coefficients, residuals, rank, sing_vals) = np.linalg.lstsq(arg_arr, z, rcond=None)
     return coefficients, residuals, rank, sing_vals
 
+
 coef, _, _, _ = polynom3d(xh1, yh1, psi1, 5)
-print(coef)
