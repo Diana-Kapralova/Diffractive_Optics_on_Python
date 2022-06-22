@@ -7,7 +7,7 @@ import scipy.io
 # mesh is rotated away from axes to avoid zeros
 
 sigma = 0.8  # Gaussian spot size
-R = 1 #  radius of beam
+R = 1  # radius of beam
 # mesh coordinates
 I = 20  # related to rows and therefore also to y coords
 J = 20  # related to columns and therefore also to x coords
