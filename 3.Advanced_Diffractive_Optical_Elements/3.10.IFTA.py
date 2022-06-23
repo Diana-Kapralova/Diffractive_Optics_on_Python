@@ -8,11 +8,12 @@ import cv2
 # Loading the target image
 N = 500
 # Read and converting to its binary form
-target = cv2.imread('squirrel.jpg', 2)
+target = cv2.imread('butterfly.jpg', 2)
 # Resize img to matrix shape
 target = cv2.resize(target, (N, N))
+th, target = cv2.threshold(target, 128, 255, cv2.THRESH_BINARY)
 # inverse image where black less than white
-target = cv2.bitwise_not(target)
+target = 255 - target
 cv2.imwrite("IMAGE_NAME.png", target)
 
 target = target.astype(float)  # Convert symbolic object to a numeric object
@@ -21,7 +22,7 @@ target = target/np.max(target)
 
 # Defining DOE phase
 DOE = 2*np.pi*np.random.rand(N, N)  # Generate a N x N matrix of random phase between 0 and 2p
-s = 1000
+s = 100
 
 # IFTA algorithm
 for t in range(s):

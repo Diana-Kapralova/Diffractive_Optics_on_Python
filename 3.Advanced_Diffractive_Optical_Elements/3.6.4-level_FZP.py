@@ -1,6 +1,5 @@
 import numpy as np
 from utils import plot_output
-import math
 
 # Defining FZP parameters
 N = 500
