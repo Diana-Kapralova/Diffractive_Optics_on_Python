@@ -10,7 +10,7 @@ X, Y = np.meshgrid(x * wsamp, y * wsamp)
 Rsamp = np.sqrt(X**2 + Y**2)
 
 f0 = 0.005  # Focal length
-depth_f = 0.001  # Focal depth
+depth_f = 0.003  # Focal depth
 R = 10**(-3)
 
 # Design of axilens
@@ -32,10 +32,13 @@ for counter1 in np.arange(0, m, 1):
     E[:, :, counter1] = abs(np.fft.fftshift(np.fft.fft2(np.fft.fftshift(A1[:, :, counter1]))))
 
     # Calculate Fourier Transform
-    plt.imshow(E[200:300, 200:300, counter1], cmap='gray')
-    plt.title('Propagation distance ' + str(round(zs2[counter1], 4) * 1000) + ' mm')
-    plt.draw()
-    plt.pause(0.5)
-    plt.clf()
+    # plt.imshow(E[200:300, 200:300, counter1], cmap='gray')
+    # plt.title('Propagation distance ' + str(round(zs2[counter1], 4) * 1000) + ' mm')
+    # plt.draw()
+    # plt.pause(0.5)
+    # plt.clf()
 
     field1[:, counter1] = E[int(N/2) + 1, 200:300, counter1]  # Accumulate the intensity profile
+
+plt.imshow(field1, cmap='gray')
+plt.show()
