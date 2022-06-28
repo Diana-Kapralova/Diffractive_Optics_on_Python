@@ -39,4 +39,3 @@ for counter1 in np.arange(0, m, 1):
     plt.clf()
 
     field1[:, counter1] = E[int(N/2) + 1, 200:300, counter1]  # Accumulate the intensity profile
-    ka = E[200:300, 200:300, counter1]
