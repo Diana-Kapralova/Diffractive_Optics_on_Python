@@ -19,10 +19,10 @@ FZA = np.exp(-1j * (np.pi/lamb)*((X**2 + Y**2)/f))  # Phase profile of axilens
 
 # Calculation of Fresnel diffraction pattern
 m = 100
-n = np.array([k for k in range(m)])
+n = np.array([k for k in np.arange(1, m + 1)])
 
 zs2 = 0.003 + (0.005/m) * n  # propagation distance
-PPF = np.zeros((N, N, m))
+PPF = np.zeros((N, N, m), dtype='complex_')
 A1 = np.zeros((N, N, m))
 E = np.zeros((N, N, m))
 field1 = np.zeros((100, m))
@@ -32,13 +32,11 @@ for counter1 in np.arange(0, m, 1):
     E[:, :, counter1] = abs(np.fft.fftshift(np.fft.fft2(np.fft.fftshift(A1[:, :, counter1]))))
 
     # Calculate Fourier Transform
-    # plt.imshow(E[200:300, 200:300, counter1], cmap='gray')
-    # plt.title('Counter is ' + str(counter1))
-    # plt.draw()
-    # plt.pause(1)
-    # plt.clf()
+    plt.imshow(E[200:300, 200:300, counter1], cmap='gray')
+    plt.title('Propagation distance ' + str(round(zs2[counter1], 4) * 1000) + ' mm')
+    plt.draw()
+    plt.pause(0.5)
+    plt.clf()
 
     field1[:, counter1] = E[int(N/2) + 1, 200:300, counter1]  # Accumulate the intensity profile
     ka = E[200:300, 200:300, counter1]
-
-print('k')
