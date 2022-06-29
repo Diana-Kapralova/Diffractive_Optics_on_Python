@@ -33,7 +33,7 @@ for counter1 in np.arange(0, m, 1):
 
     # Calculate Fourier Transform
     plt.imshow(E[200:300, 200:300, counter1], cmap='gray')
-    plt.title('Propagation distance ' + str(round(zs2[counter1], 4) * 1000) + ' mm')
+    plt.title('Propagation distance ' + str(round(zs2[counter1]*1000, 4)) + ' mm')
     plt.draw()
     plt.pause(0.5)
     plt.clf()
@@ -41,4 +41,5 @@ for counter1 in np.arange(0, m, 1):
     field1[:, counter1] = E[int(N/2) + 1, 200:300, counter1]  # Accumulate the intensity profile
 
 plt.imshow(field1, cmap='gray')
+plt.title('Cross section of intensity at distance of propagation z = ' + str(round(zs2[-1]*1000, 4)))
 plt.show()
